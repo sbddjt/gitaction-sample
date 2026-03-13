@@ -1,0 +1,24 @@
+name: Basic CI Example
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+    
+jobs:
+  build: # 아무거나 써도됨
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4 # 레포지토리에서 코드를 다운로드
+      - name: Run a one-line Script
+        run: echo "Hello Git Actions" # 쉘 명령어 실행
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Display Python Version
+        run: python --version
+        
