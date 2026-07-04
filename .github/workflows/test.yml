@@ -1,0 +1,8 @@
+name: Test Pipeline
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, Infra Engineer!"
+      - run: exit 1 # 일부러 실패
